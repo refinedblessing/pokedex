@@ -1,38 +1,70 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.App-title {
+  color: lightgrey;
   text-align: center;
+  font-size: 28px;
+  margin: 30px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Pokedex {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 710px) {
+  .Pokedex {
+    grid-template-columns: 1fr 1fr;
+    max-width: 300px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Pokecard {
+  border-radius: 15px;
+  background-color: lightgrey;
+  text-align: center;
+  padding: 15px 20px;
+  width: 150px;
+  height: 200px;
+  box-shadow: 1px 1px grey;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.Pokecard:hover {
+  transform: rotateY(5deg) scale(120%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Pokecard-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: rgb(93, 69, 137);
+}
+
+.Pokecard-img {
+  width: 80px;
+  transition: 0.3s;
+  margin: 15px 0;
+}
+
+.Pokecard:hover .Pokecard-img {
+  transform: scale(150%) rotate(4deg);
+}
+
+.Pokecard-type,
+.Pokecard-exp {
+  font-size: 12px;
 }
